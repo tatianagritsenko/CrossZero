@@ -11,7 +11,7 @@ public class Game {
         while (!isEndGame) {
             makeMove();
 
-            char winner = map.findWinner();
+            char winner = findWinner();
 
             switch (winner) {
                 case 'X' -> System.out.println("Выиграли крестики");
@@ -25,8 +25,12 @@ public class Game {
                 changePlayer();
         }
 
-        map.showMap();
+        showMap();
         System.out.println("Игра закончена");
+    }
+
+    private char findWinner() {
+        return map.findWinner();
     }
 
     private void showMap() {
